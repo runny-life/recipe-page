@@ -18,3 +18,27 @@ body {
   color: var(--stone-600);
   background-color: var(--stone-100);
 }
+
+ul {
+  list-style: none;
+}
+
+li {
+  position: relative;
+  padding-left: 2.5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.25rem;
+    height: 0.25rem;
+    border-radius: 50%;
+  }
+}
+
+li span {
+  font-weight: 700;
+}
