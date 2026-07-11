@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header__title {
+  color: var(--stone-900);
+}

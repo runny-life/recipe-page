@@ -1,0 +1,21 @@
+h1 {
+  font-family: var(--ff-accent);
+  font-weight: 400;
+  font-size: clamp(2.25rem, 2.011rem + 1.018vw, 2.5rem);
+  line-height: 1;
+}
+
+h2 {
+  font-family: var(--ff-accent);
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+h3,
+.h3 {
+  font-family: var(--ff-base);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1;
+}
