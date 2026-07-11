@@ -3,3 +3,5 @@
 @import url("./base/fonts.css");
 @import url("./base/typography.css");
 @import url("./base/base.css");
+/* Components */
+@import url("./components/recipe.css");

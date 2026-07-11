@@ -1,0 +1,25 @@
+.recipe {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+}
+
+.recipe__body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2.5rem 2rem;
+}
+
+.reccipe__image-wrapper {
+  width: 100%;
+  height: 10.688rem;
+  overflow: hidden;
+}
+
+.reccipe__image-wrapper img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
