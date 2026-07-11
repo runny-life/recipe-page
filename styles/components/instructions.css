@@ -1,0 +1,15 @@
+.instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.instructions__title {
+  color: var(--brown-800);
+}
+
+.instructions__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

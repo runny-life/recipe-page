@@ -1,0 +1,19 @@
+.ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ingredients__title {
+  color: var(--brown-800);
+}
+
+.ingredients__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ingredients__item::before {
+  background-color: var(--brown-800);
+}

@@ -23,7 +23,7 @@ ul {
   list-style: none;
 }
 
-li {
+ul li {
   position: relative;
   padding-left: 2.5rem;
 
@@ -39,6 +39,32 @@ li {
   }
 }
 
+ol {
+  counter-reset: counter;
+  list-style-type: none;
+}
+
+ol li {
+  position: relative;
+  padding-left: 2.5rem;
+  counter-increment: counter;
+
+  &::before {
+    content: counter(counter, decimal) ".";
+    position: absolute;
+    left: 0.5rem;
+    top: 0;
+    font-weight: 700;
+    color: var(--brown-800);
+  }
+}
+
 li span {
   font-weight: 700;
+}
+
+hr {
+  height: 1px;
+  background-color: var(--stone-150);
+  border: none;
 }
