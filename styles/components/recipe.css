@@ -23,3 +23,21 @@
   height: 100%;
   object-fit: cover;
 }
+
+@media (min-width: 768px) {
+  .recipe {
+    gap: 2.5rem;
+    width: clamp(38.5rem, 16rem + 46.875vw, 46rem);
+    padding: 2.5rem;
+    border-radius: 24px;
+  }
+
+  .reccipe__image-wrapper {
+    height: 18.75rem;
+    border-radius: 12px;
+  }
+
+  .recipe__body {
+    padding: 0;
+  }
+}

@@ -68,3 +68,9 @@ hr {
   background-color: var(--stone-150);
   border: none;
 }
+
+@media (min-width: 768px) {
+  body {
+    padding-block: 8rem;
+  }
+}
