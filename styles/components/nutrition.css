@@ -1,0 +1,27 @@
+.nutrition {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nutrition__title {
+  color: var(--brown-800);
+}
+
+.nutrition__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nutrition__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding-inline: 2rem;
+}
+
+.nutrition__list-description {
+  font-weight: 700;
+  color: var(--brown-800);
+}
