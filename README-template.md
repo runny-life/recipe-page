@@ -13,105 +13,113 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
-  - [AI Collaboration](#ai-collaboration)
+  - [AI collaboration](#ai-collaboration)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the recipe page optimally on both mobile and desktop devices.
+- See the layout that matches the provided design, including:
+  - A hero image of the omelette.
+  - Preparation time, ingredients, step-by-step instructions, and nutrition table.
+- Experience a clean, semantic HTML structure with proper accessibility attributes.
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![screenshot recipe page](./screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/runny-life/recipe-page](https://github.com/runny-life/recipe-page)
+- Live Site URL: [https://runny-life.github.io/recipe-page/](https://runny-life.github.io/recipe-page/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Semantic HTML5 markup (`<main>`, `<article>`, `<section>`, `<dl>`)
+- CSS custom properties (variables for colors and fonts)
+- Flexbox (for layout and alignment)
+- CSS Grid (for the nutrition table rows)
+- Mobile-first workflow (media query for screens wider than 768px)
+- BEM naming convention for CSS classes
+- Responsive typography using `clamp()`
+- Modular CSS with `@import` (separate files for base, components)
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+While building this project, I reinforced several key concepts:
 
-To see how you can add code snippets, see below:
+1. **Using CSS counters for custom list numbering** – Instead of relying on default ordered list styles, I used `counter-reset` and `counter-increment` to style numbers with a dot and custom color.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+   ```css
+   ol {
+     counter-reset: counter;
+     list-style-type: none;
+   }
+   ol li::before {
+     content: counter(counter, decimal) ".";
+     counter-increment: counter;
+     font-weight: 700;
+     color: var(--brown-800);
+   }
+   ```
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+2. **Styling list markers with pseudo-elements** – For unordered lists, I replaced default bullets with custom round markers positioned absolutely for precise vertical alignment.
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
+   ```css
+   ul li::before {
+     content: "";
+     width: 0.25rem;
+     height: 0.25rem;
+     border-radius: 50%;
+     background-color: var(--brown-800);
+   }
+   ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+3. **Fluid typography with `clamp()`** – The main heading scales smoothly between 2.25rem and 2.5rem without extra media queries, improving responsiveness.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+4. **Component-based CSS architecture** – Separating styles into `base/` and `components/` folders using `@import` made the code more maintainable and scalable.
+
+5. **Accessibility enhancements** – Added ARIA attributes (`aria-labelledby`, `aria-describedby`) to sections and used semantic elements to improve screen reader support.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Going forward, I want to focus on:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Deepening my understanding of CSS Grid for more complex layouts.
+- Integrating a CSS preprocessor (like Sass) for nested rules and mixins.
+- Adding subtle animations (e.g., fade-in on scroll) for a polished user experience.
+- Performing thorough accessibility audits with Lighthouse and screen readers.
+- Optimizing font loading further (already using `font-display: swap`).
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [MDN Web Docs: CSS Counter Styles](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Counter_Styles) – Helped me implement custom ordered list numbering.
+- [Can I Use: clamp()](https://caniuse.com/css-math-functions) – Verified browser support for the `clamp()` function.
+- [Frontend Mentor Community](https://www.frontendmentor.io/community) – Gained inspiration from other solutions.
+- [CSS Tricks: A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) – Quick reference for Flexbox properties.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+### AI collaboration
 
-### AI Collaboration
+I used an AI assistant (ChatGPT) during this project for:
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
+- **Generating the README structure** – to quickly draft a complete documentation template.
+- **Explaining CSS counters** – the AI provided clear examples and syntax.
+- **Code refactoring** – helped consolidate repetitive styles and extract common patterns into base styles.
 
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
-
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
+The AI was helpful for brainstorming and boilerplate, but all final design decisions and cross‑browser testing were done manually.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- GitHub – [@runny-life](https://github.com/runny-life)
+- Frontend Mentor – [@runny-life](https://www.frontendmentor.io/profile/runny-life)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thanks to the Frontend Mentor community for providing high‑quality design challenges. Special thanks to the creators of the Outfit and Young Serif fonts for making the design look beautiful.
